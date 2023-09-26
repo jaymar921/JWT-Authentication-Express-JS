@@ -8,10 +8,10 @@ const LoginRoute = (req, res) => {
     assume that we can login using 
     username = "jaymar" and password = "pas$word"
 
-    otherwise we return a status 403 (Unauthorized) and return a message
+    otherwise we return a status 401 (Unauthorized) and return a message
   */
   if (username !== "jaymar" && password !== "pas$word")
-    return res.status(403).json({ message: "Invalid login credentials" });
+    return res.status(401).json({ message: "Invalid login credentials" });
 
   /*
     If username and password meets the criteria, lets login the user
